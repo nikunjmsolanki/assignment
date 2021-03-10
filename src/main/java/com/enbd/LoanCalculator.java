@@ -71,9 +71,9 @@ public class LoanCalculator {
                 .apply(
                         Window.<KV<Long, AccountSchema>>into(
 
-                                FixedWindows.of(Duration.standardSeconds(30)))
-//                                .withAllowedLateness(Duration.standardSeconds(5l))
-//                                .discardingFiredPanes()
+                                FixedWindows.of(Duration.standardSeconds(60)))
+                                .withAllowedLateness(Duration.standardSeconds(30l))
+                                .discardingFiredPanes()
                 );
 
         PCollection<KV<Long, LoanSchema>> loanRawDataAvro = p.apply(
@@ -93,9 +93,9 @@ public class LoanCalculator {
 
                 })).apply(
                         Window.<KV<Long, LoanSchema>>into(
-                                FixedWindows.of(Duration.standardSeconds(30)))
-//                                .withAllowedLateness(Duration.standardSeconds(5l))
-//                                .accumulatingFiredPanes()
+                                FixedWindows.of(Duration.standardSeconds(60)))
+                                .withAllowedLateness(Duration.standardSeconds(30l))
+                                .discardingFiredPanes()
                 );
 
         final TupleTag<AccountSchema> accTag = new TupleTag<>();

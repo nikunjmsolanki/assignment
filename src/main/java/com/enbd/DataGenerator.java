@@ -68,7 +68,7 @@ public class DataGenerator {
         Schema loanSchema = Schema.parse(new File("src/main/resources/avro/loan.avsc"));
 
         int counter = 1;
-        while (counter < 100) {
+        while (counter < 1000) {
             int accNo = getRandomAccNumber();
             Integer accType = null;
             if (accIdVsAccType.containsKey(accNo)) {
