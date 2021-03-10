@@ -1,0 +1,16 @@
+{
+  "namespace": "com.enbd",
+  "type": "record",
+  "name": "AccountSchema",
+  "fields": [
+    {
+      "name": "AccountId",
+      "type": "long"
+    },
+    {
+      "name": "AccountType",
+      "type": "int",
+      "valid_values": "1,2,3,4"
+    }
+  ]
+}

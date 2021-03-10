@@ -1,0 +1,23 @@
+{
+  "namespace": "com.enbd",
+  "type": "record",
+  "name": "LoanAggSchema",
+  "fields": [
+    {
+      "name": "AccountType",
+      "type": "int"
+    },
+    {
+      "name": "TotalCount",
+      "type": "int"
+    },
+    {
+      "name": "TotalAmount",
+      "type": "double"
+    },
+    {
+      "name": "LastMinuteCount",
+      "type": "int"
+    }
+  ]
+}
